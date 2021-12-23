@@ -325,7 +325,7 @@
             animate_id = window.requestAnimationFrame(drawFrame);
             return
           }
-          if ((t - lastRun) < 1000 / 60) {
+          if ((t - lastRun) < 1000 / 30) {
             if (particles.length < rendering_particles * 1.5 && !loading_particles) {
               //load more data from firebase
               loading_particles = [];
@@ -343,7 +343,7 @@
               })
               loading_particles = null
             }
-            //skip frame if > 60fps
+            //skip frame if > 30fps
             animate_id = window.requestAnimationFrame(drawFrame);
             return
           }
