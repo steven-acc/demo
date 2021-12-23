@@ -137,16 +137,16 @@
       }
 
       db = (() => {
-        const flight2 = {
+        const flight = {
           apiKey: "AIzaSyBMVA42aQYMMGP1UnFUsgwJpAdPcNG9-HA",
           authDomain: "us-flight-f44c4.firebaseapp.com",
           projectId: "us-flight-f44c4",
         };
-        var app = firebase.initializeApp(flight2, "test2");
+        var app = firebase.initializeApp(flight, "app");
         return firebase.firestore(app);
       })()
       let query = function() {
-        let flight_collection = db.collection("flight2");
+        let flight_collection = db.collection("flight");
         return new Promise((resolve, reject) => {
           flight_collection.get().then((querySnapshot) => {
             resolve(function*() {
